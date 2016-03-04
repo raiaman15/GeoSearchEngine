@@ -291,14 +291,14 @@ public function query_getlocation($query) {
 //Wavelet search for location (used for 'near' Query)
     public function search_location_wavelettree($query,$location) {
         $keydir = "none";
-        if(strpos($query, 'north')){$keydir = "north";}
-        if(strpos($query, 'south')){$keydir = "south";}
-        if(strpos($query, 'east')){$keydir = "east";}
-        if(strpos($query, 'west')){$keydir = "west";}
-        if(strpos($query, 'right')){$keydir = "east";}
-        if(strpos($query, 'left')){$keydir = "west";}
-        if(strpos($query, 'top')){$keydir = "north";}
-        if(strpos($query, 'bottom')){$keydir = "south";}
+        if(strpos($query, 'north')!==false){$keydir = "north";}
+        if(strpos($query, 'south')!==false){$keydir = "south";}
+        if(strpos($query, 'east')!==false){$keydir = "east";}
+        if(strpos($query, 'west')!==false){$keydir = "west";}
+        if(strpos($query, 'right')!==false){$keydir = "east";}
+        if(strpos($query, 'left')!==false){$keydir = "west";}
+        if(strpos($query, 'top')!==false){$keydir = "north";}
+        if(strpos($query, 'bottom')!==false){$keydir = "south";}
         $data=NULL;
         $swtreelat = new SpatialWaveletTree();
         $swtreelon = new SpatialWaveletTree();
@@ -343,7 +343,7 @@ public function query_getlocation($query) {
                     $supymax = $levelup->ymax;
                     $super = array($supxmin, $supxmax, $supymin, $supymax);
                 }
-                if(false) {
+                if($keydir!=="none") {
                     if($keydir == "east")
                         $supxmin = $queryu2;
                     if($keydir == "west")
