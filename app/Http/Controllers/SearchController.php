@@ -370,33 +370,33 @@ public function query_getlocation($query) {
                     }
                     $super = array($supxmin, $supxmax, $supymin, $supymax);     
                 }
-                if($keydir!=="none") {
-                    if($keydir == "east")
-                        $supxmin = ($queryu2+$queryl2)/2;
-                    if($keydir == "west")
-                        $supxmax = ($queryu2+$queryl2)/2;
-                    if($keydir == "north")
-                        $supymin = ($queryu1+$queryl1)/2;
-                    if($keydir == "south")
-                        $supymax = ($queryu1+$queryl1)/2;
-                    if($keydir == "north east") {
-                        $supxmin = ($queryu2+$queryl2)/2;
-                        $supymin = ($queryu1+$queryl1)/2;
-                    }
-                    if($keydir == "south west") {
-                        $supxmin = ($queryu2+$queryl2)/2;
-                        $supymax = ($queryu1+$queryl1)/2;
-                    }
-                    if($keydir == "south east") {
-                        $supxmax = ($queryu2+$queryl2)/2;
-                        $supymin = ($queryu1+$queryl1)/2;
-                    }
-                    if($keydir == "north west") {
-                        $supxmax = ($queryu2+$queryl2)/2;
-                        $supymax = ($queryu1+$queryl1)/2;
-                    }
-                    $super = array($supxmin, $supxmax, $supymin, $supymax);     
-                }
+                // if($keydir!=="none") {
+                //     if($keydir == "east")
+                //         $supxmin = ($queryu2+$queryl2)/2;
+                //     if($keydir == "west")
+                //         $supxmax = ($queryu2+$queryl2)/2;
+                //     if($keydir == "north")
+                //         $supymin = ($queryu1+$queryl1)/2;
+                //     if($keydir == "south")
+                //         $supymax = ($queryu1+$queryl1)/2;
+                //     if($keydir == "north east") {
+                //         $supxmin = ($queryu2+$queryl2)/2;
+                //         $supymin = ($queryu1+$queryl1)/2;
+                //     }
+                //     if($keydir == "south west") {
+                //         $supxmin = ($queryu2+$queryl2)/2;
+                //         $supymax = ($queryu1+$queryl1)/2;
+                //     }
+                //     if($keydir == "south east") {
+                //         $supxmax = ($queryu2+$queryl2)/2;
+                //         $supymin = ($queryu1+$queryl1)/2;
+                //     }
+                //     if($keydir == "north west") {
+                //         $supxmax = ($queryu2+$queryl2)/2;
+                //         $supymax = ($queryu1+$queryl1)/2;
+                //     }
+                //     $super = array($supxmin, $supxmax, $supymin, $supymax);     
+                // }
                 if($level < 5){$next =DB::table('locations')->where('name_'.$level, $loc)->whereNotNull('name_'.($level+1))->count();}
                 else $next = 0;
                 if($next == 0 && $level != 5) {
