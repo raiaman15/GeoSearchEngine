@@ -264,9 +264,9 @@ class ExtractController extends Controller
         $longitude=$iplongitude;
         $temp = array_reverse($words);
         foreach ($temp as $word => $value) 
-        {  
-          $num = array(1,2,3,4,5,6,7,8,9,0);
-          $word = str_replace($num, '', $word);
+        { 
+          $num = array('-1','-2','-3','-4','-5','-6','-7','-8','-9','-0');
+          $word = str_replace($num, '', $value);
           if ((strcmp($word, '') !== 0)&&(strcmp($word, ' ') !== 0))
           {
             $loc = $this->findLocation($word);
