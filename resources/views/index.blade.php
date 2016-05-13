@@ -41,13 +41,13 @@
   </div>
     <div class="container-fluid">
     <div class="panel panel-default">
-      <div class="panel-heading">This section would form the inverted index table of all the elements present in the table <i>'urldetails'</i></div>
+      <div class="panel-heading">This section would form the document-keyword list table of all the elements present in the table <i>'urldetails'</i></div>
       <div class="panel-body">
         <form class="form-horizontal" method="get" action="create_invertedindex">
           <fieldset>
-            <legend>Create Inverted Index</legend>
+            <legend>Create Document-Keyword List</legend>
             <div class="form-group">
-              <label class="col-lg-3 control-label" style="text-align:center; vertical-align:middle;"><u><big>Create Inverted Index</big></u><br>Make new inverted index with current crawled information.<br/>
+              <label class="col-lg-3 control-label" style="text-align:center; vertical-align:middle;"><u><big>Create Document-Keyword List</big></u><br>Make new document-keyword list with current crawled information.<br/>
               <button type="submit" value="submit" onclick="needToConfirm = false;" class="btn btn-primary">Create</button>
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               </label>

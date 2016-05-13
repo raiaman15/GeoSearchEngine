@@ -52,13 +52,13 @@
       @endif
       <?php $i=0; ?>
       @foreach ($urllist as $urlobj)
-          <tr><td> <a href="{{ $urlobj->url }}">{{ $urlobj->url }}</a> <br/> <small> {{ $urlobj->urltext }} </small></td><td>
+          <tr><td> <h3><a href="{{ $urlobj->url }}">{{ $urlobj->url }}</a> <br/> <small> {{ $urlobj->urltext }} </small></h3></td><td>
             <form class="form-horizontal" method="post" action="{{route('process_url')}}">
                 <input type="hidden" name="id" value="{{ $urlobj->id }}" required>
                 <input type="hidden" name="url" value="{{ $urlobj->url }}" required>
                 <input type="hidden" name="urltext" value="{{ $urlobj->urltext }}" required>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <button type="submit" value="submit" <?php $i++; if($i==1) echo 'id="first"' ;?> class="btn btn-primary btn-xs">Process</button>
+                <button type="submit" value="submit" <?php $i++; if($i==1) echo 'id="first"' ;?> class="btn btn-primary btn">Process</button>
             </form>
           </td></tr>
       @endforeach
