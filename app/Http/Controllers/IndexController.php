@@ -112,7 +112,7 @@ class IndexController extends Controller
       $invertedindex_keywordcount = Invertedindex::count();
       $invertedindex_documentcount = Invertedindex::all(['docid'])->unique(['docid'])->count();
       $temp = DB::select('SELECT round(((data_length + index_length) / 1024 / 1024), 2) "size" FROM information_schema.TABLES WHERE table_schema = "newgeosearch" AND table_name = "invertedindex"');
-      foreach ($temp[0] as $key => $value) {
+      foreach ($temp as $key => $value) {
         $invertedindex_size = $value;
       }
     }
