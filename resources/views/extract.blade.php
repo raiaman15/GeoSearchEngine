@@ -58,7 +58,7 @@
                 <input type="hidden" name="url" value="{{ $urlobj->url }}" required>
                 <input type="hidden" name="urltext" value="{{ $urlobj->urltext }}" required>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <button type="submit" value="submit" <?php $i++; if($i==1) echo 'id="first"' ;?> class="btn btn-primary btn">Process</button>
+                <button type="submit" value="submit" <?php $i++; if($i==4) echo 'id="first"' ;?> class="btn btn-primary btn">Process</button>
             </form>
           </td></tr>
       @endforeach
