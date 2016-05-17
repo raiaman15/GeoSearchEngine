@@ -115,7 +115,7 @@ class IndexController extends Controller
       // foreach ($temp[0] as $key => $value) {
       //   $invertedindex_size = $value;
       // }
-      $invertedindex_size = 1.7;
+      $invertedindex_size = 107.2;
     }
 
 //dd($settings[0]['value']);
